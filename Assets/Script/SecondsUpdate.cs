@@ -10,6 +10,12 @@ public class SecondsUpdate : MonoBehaviour
     
     void Update()
     {
+        if(!gotStartTime)
+        {
+            timeStarOffset = Time.realtimeSinceStartup;
+            gotStartTime = true;
+        }
 
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, Time.realtimeSinceStartup - timeStarOffset);
     }
 }
