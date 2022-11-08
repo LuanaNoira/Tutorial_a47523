@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SecondsUpdate : MonoBehaviour
 {
+    
+    float timeStarOffset = 0;
+    bool gotStartTime = false;
+    
     void Update()
     {
 
