@@ -33,6 +33,12 @@ public class FollowPath : MonoBehaviour
         currentWP = 0;
     }
 
+    public void GoToTanks()
+    {
+        g.AStar(currentNode, wps[8]);
+        currentWP = 0;
+    }
+
     void LateUpdate()
     {
         if (g.getPathLength() == 0 || currentWP == g.getPathLength())
