@@ -47,15 +47,16 @@ public class GAgent : MonoBehaviour {
         invoked = false;
     }
 
-    void LateUpdate() {
-
-        if (currentAction != null && currentAction.running) {
-
+    void LateUpdate() 
+    {
+        if (currentAction != null && currentAction.running) 
+        {
             // Check the agent has a goal and has reached that goal
-            if (currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1.0f) {
+            if (currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1f) 
+            {
 
-                if (!invoked) {
-
+                if (!invoked) 
+                {
                     Invoke("CompleteAction", currentAction.duration);
                     invoked = false;
                 }
