@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoHome : GAction {
+public class Rest: GAction {
     public override bool PrePerform() {
 
         return true;
@@ -10,8 +10,7 @@ public class GoHome : GAction {
 
     public override bool PostPerform() {
 
-        Destroy(this.gameObject);
-
+        beliefs.RemoveState("exhausted");
         return true;
     }
 }
