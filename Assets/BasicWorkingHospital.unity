@@ -3672,12 +3672,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Get Patient
   cost: 1
-  target: {fileID: 1000317771}
+  target: {fileID: 0}
   targetTag: 
   duration: 0
   preConditions:
   - key: Waiting
-    value: 0
+    value: 1
+  - key: FreeCubicle
+    value: 1
   afterEffects:
   - key: treatPatient
     value: 0
