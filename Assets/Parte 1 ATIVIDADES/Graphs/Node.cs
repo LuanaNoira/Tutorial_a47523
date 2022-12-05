@@ -2,6 +2,12 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!
+//PROFESSOR ESTE SCRIPT DÁ ME UM ERRO NA 2ª PARTE (ATIVIDADE 4) MAS É UM SCRIPT DA 1ª PARTE
+//!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 public class Node
 {
 	public List<Edge> edgelist = new List<Edge>();
