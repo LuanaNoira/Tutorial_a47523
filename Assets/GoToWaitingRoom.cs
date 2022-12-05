@@ -8,8 +8,11 @@ public class GoToWaitingRoom : GAction {
         return true;
     }
 
-    public override bool PostPerform() {
-
+    public override bool PostPerform() 
+    {
+        GWorld.Instance.GetWorld().ModifyState("Waiting",1);
+        GWorld.Instance.AddPatient(this.gameObject);
+        
         return true;
     }
 }
