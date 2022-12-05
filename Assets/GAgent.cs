@@ -49,12 +49,10 @@ public class GAgent : MonoBehaviour {
 
     void LateUpdate() {
 
-        if (currentAction != null && currentAction.running) 
-        {
+        if (currentAction != null && currentAction.running) {
 
             // Check the agent has a goal and has reached that goal
-            if (currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1.0f) 
-            {
+            if (currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1.0f) {
 
                 if (!invoked) {
 
