@@ -54,9 +54,10 @@ public class GAgent : MonoBehaviour {
         if (currentAction != null && currentAction.running) 
         {
             // Check the agent has a goal and has reached that goal
-            if (currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1f) 
+            float distanceToTarget = Vector3.Distance(currentAction.target.transform.position, this.transform.position);
+            if (currentAction.agent.hasPath && distanceToTarget < 2f) 
             {
-
+                Debug.Log("Distance to Goal: " + currentAction.agent.remainingDistance);
                 if (!invoked) 
                 {
                     Invoke("CompleteAction", currentAction.duration);
@@ -109,7 +110,6 @@ public class GAgent : MonoBehaviour {
 
             if (currentAction.PrePerform()) {
 
-                // Get our current object
                 if (currentAction.target == null && currentAction.targetTag != "") {
 
                     currentAction.target = GameObject.FindWithTag(currentAction.targetTag);
@@ -117,9 +117,7 @@ public class GAgent : MonoBehaviour {
 
                 if (currentAction.target != null) {
 
-                    // Activate the current action
                     currentAction.running = true;
-                    // Pass Unities AI the destination for the agent
                     currentAction.agent.SetDestination(currentAction.target.transform.position);
                 }
             } else {
